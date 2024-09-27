@@ -1,9 +1,6 @@
 version: "3.9"
 services:
   app:
-    depends_on:
-      postgres:
-        condition: service_healthy
     image: svhd/logto:${TAG-latest}
     entrypoint: ["sh", "-c", "npm run cli db seed -- --swe && npm start"]
     ports:
